@@ -8,6 +8,7 @@ import IconButton from "@/components/Button/IconButton";
 import EmojiPicker from "@/components/EmojiPicker";
 import EmojiList from "@/components/EmojiList";
 import EmojiSticker from "@/components/EmojiSticker";
+import {GestureHandlerRootView} from "react-native-gesture-handler";
 
 export default function HomeScreen() {
   const [showAppOptions, setShowAppOptions] = useState<boolean>(false);
@@ -49,7 +50,7 @@ export default function HomeScreen() {
     // we will add this later
   };
   return (
-    <View style={styles.container}>
+    <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer
           placeholderImage={placeholderImage}
@@ -87,7 +88,7 @@ export default function HomeScreen() {
         <EmojiList onSelect={setPickedEmoji} onCLoseModal={onModalClose} />
       </EmojiPicker>
       <StatusBar />
-    </View>
+    </GestureHandlerRootView>
   );
 }
 
